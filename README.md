@@ -1,87 +1,75 @@
-# Project Title
+# Synchronization_web
 
-One Paragraph of project description goes here
+This project demonstrates a web app that synchronizes the mouse movement across multiple browsers.
 
 ## Getting Started
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-### Prerequisites
+## Prerequisites
 
-What things you need to install the software and how to install them
+1. Node.js installation: Develop and run Firebase Cloud Functions using Node.js, a runtime that enables server-side execution of JavaScript.
 
-```
-Give examples
-```
+2. Firebase CLI installation: Use the Firebase CLI to create, manage, and deploy Firebase projects.
 
-### Installing
+3. Firebase project creation: Create a new Firebase project in the Firebase console and enable the required features.
 
-A step by step series of examples that tell you how to get a development env running
+With these prerequisites in place, you can proceed with developing using Firebase Cloud Functions.
 
-Say what the step will be
+## Node.js Environment Setup
 
-```
-Give the example
-```
+Follow the instructions provided for installing Node.js on Windows, macOS, or Linux (Debian and Ubuntu-based distributions).
 
-And repeat
+After installing Node.js, verify the installation by running `node -v` and `npm -v` in the terminal (or Command Prompt on Windows).
 
-```
-until finished
-```
+## Firebase Environment Setup
 
-End with an example of getting some data out of the system or using it for a little demo
+1. Create a Firebase project in the Firebase console.
 
-## Running the tests
+2. Install the Firebase CLI by running `npm install -g firebase-tools`.
 
-Explain how to run the automated tests for this system
+3. Log in to the Firebase CLI by running `firebase login`.
 
-### Break down into end to end tests
+4. Initialize the Firebase project in the project directory by running `firebase init`. Follow the prompts to select Realtime Database and Hosting.
 
-Explain what these tests test and why
+5. Configure the Firebase project settings in main.js by adding the Firebase project settings to `const firebaseConfig`.
 
-```
-Give an example
-```
+6. Install the necessary packages by running `npm install firebase-admin firebase-functions`.
 
-### And coding style tests
+## Firebase Security Settings
 
-Explain what these tests test and why
+Change the security settings in the Realtime Database rules to:
 
-```
-Give an example
-```
+{
+"rules": {
+".read": true,
+".write": true
+}
+}
+
+
+Change the Firebase pricing plan to the Blaze pay-as-you-go plan.
+
+## Building the Project
+
+1. Log in to the Firebase project by running `firebase login` in the project directory (if not already logged in).
+
+2. Initialize the Firebase project by running `firebase init` (if not already initialized). Follow the prompts to select Hosting and set the default public folder.
+
+3. Ensure the `public` folder contains `index.html` and `main.js`.
+
+## Testing the Project
+
+*Note: This project does not have automated tests. The following steps demonstrate how to manually test the project.*
+
+1. Open two browser windows and navigate to the same URL.
+
+2. Move the mouse in one browser window. The dot in the other browser window should move to the same coordinates.
+
+3. The browser's developer tools console should display the mouse coordinates.
 
 ## Deployment
 
-Add additional notes about how to deploy this on a live system
+Deploy the Firebase project by running `firebase deploy`. This will deploy the files in the `public` folder to Firebase Hosting, making the web app publicly accessible. Once the deployment is complete, the terminal will display the URL of the web app.
 
-## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
